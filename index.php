@@ -58,7 +58,19 @@ function bondJSON(data){
 	//using this I can see the object in the console
 	console.log(data);
 
+	//this defines the type of info returned
 	$('#filmtitle').html(data.title);
+
+	$.each(data.films,function(i,item){
+		let str = bondTemplate(item);
+
+		$('<div></div>').html(str).appendTo('#films');
+
+	});
+
+
+
+
 	//in this way we can see all of the data on the page
 	/*
 	let myData = JSON.stringify(data,null,4);
