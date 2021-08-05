@@ -61,10 +61,13 @@ function bondJSON(data){
 	//this defines the type of info returned
 	$('#filmtitle').html(data.title);
 
-	$.each(data.films,function(i,item){
-		let str = bondTemplate(item);
+	$('#films').html('');
 
-		$('<div></div>').html(str).appendTo('#films');
+	$.each(data.films,function(i,item){
+		let $str = bondTemplate(item);
+
+		//$('<div></div>').html(str).appendTo('#films');
+		$str.appendTo('#films');
 
 	});
 
